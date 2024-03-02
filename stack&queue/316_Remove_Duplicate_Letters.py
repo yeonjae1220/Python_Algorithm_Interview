@@ -1,6 +1,32 @@
 #https://crackerjacks.tistory.com/14
 # deepcopy에 대한 링크
 
+from collections import Counter
+
+class Solution_stack:
+    def removeDuplicateLetters(self, s: str) -> str:
+        counter, stack = Counter(s), []
+
+        for char in s:
+            counter[char] -= 1
+            if char in stack:
+                continue
+            while stack and char < stack[-1] and counter[stack[-1]] > 0:
+                stack.pop()
+            stack.append(char)
+
+        return ''.join(stack)
+
+#re
+class Solution_Divide_and_Conquer:
+    def removeDuplicateLetters(self, s: str) -> str:
+        for char in sorted(set(s)): #set() 하면 중복 원소 제거 되나봄
+            suffix = s[s.index(char):] # 반복문을 돌며 동일한 알파벳 확인
+
+            if set(s) == set(suffix):
+                return char + self.removeDuplicateLetters(suffix.replace(char, ''))
+        
+        return ''
 
 class Solution_failed:
     def removeDuplicateLetters(self, s: str) -> str:
