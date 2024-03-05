@@ -55,6 +55,6 @@ class Solution_failed:
 
             
 s = "bcabc"
-ans = Solution()
+ans = Solution_stack()
 print(ans.removeDuplicateLetters(s))
             
