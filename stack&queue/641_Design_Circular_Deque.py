@@ -2,7 +2,7 @@
 import collections
 
 #왜 얘 정의를 안하고 주석을 해도 leetcode에서 통과가 되는거임? 정의를 안했는데
-#leetcode에서 제공한다
+#leetcode에서 제공한다? 
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
