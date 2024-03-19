@@ -34,7 +34,7 @@ class Solution_pythonic_way:
 nums = [4,1,-1,2,-1,2,3]
 k = 1
 
-ans = Solution()
+ans = Solution_pythonic_way()
 print(ans.topKFrequent(nums, k))
 
 # freqs = collections.Counter(nums)
