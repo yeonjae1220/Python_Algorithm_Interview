@@ -93,7 +93,7 @@ class Solution:
 
 
 
-
+#트리 만들어 주는 함수가 잘못됨, root = [1,None,1,1,1,1,1,1] 이런 인풋일 때 잘못된 트리를 만든다.
 def insertLevelOrder(arr, root, i, n):
     if i < n:
         temp = TreeNode(arr[i])
@@ -108,8 +108,66 @@ def createBinaryTree(arr):
     root = insertLevelOrder(arr, root, 0, n)
     return root
 
+# def buildTreeFromArray(arr):
+#     # 배열이 비어있을 경우 None 반환
+#     if not arr:
+#         return None
+    
+#     # TreeNode 객체를 배열의 각 요소를 이용하여 생성
+#     nodes = [TreeNode(val) if val is not None else None for val in arr]
+    
+#     # 각 노드에 대해 자식 노드 설정
+#     for i in range(len(arr)):
+#         if nodes[i] is not None:
+#             left_idx = 2 * i + 1
+#             right_idx = 2 * i + 2
+            
+#             if left_idx < len(arr):
+#                 nodes[i].left = nodes[left_idx]
+#             if right_idx < len(arr):
+#                 nodes[i].right = nodes[right_idx]
+    
+#     # 루트 노드 반환
+#     return nodes[0]
+
+# def printTree(root, level=0, prefix="Root:"):
+#     if root is not None:
+#         print(" " * (level * 4) + prefix + "->", root.val)
+#         printTree(root.left, level + 1, "L:")
+#         printTree(root.right, level + 1, "R:")
+
+
+
+
+def preorder(root):
+    if root:
+        print(root.val, end=' ')
+        preorder(root.left)
+        preorder(root.right)
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val, end=' ')
+        inorder(root.right)
+
+def postorder(root):
+    if root:
+        postorder(root.left)
+        postorder(root.right)
+        print(root.val, end=' ')
+
 #root = [5,4,5,1,1,None,5]
 #root = [1,4,5,4,4,None,5]
 #root = [4,4,5,4,4,None,5]
+root = [1,None,1,1,1,1,1,1]
 node = createBinaryTree(root)
+#node = buildTreeFromArray(root)
+
+preorder(node)
+print("\n")
+inorder(node)
+print("\n")
+postorder(node)
+
 print(Solution().longestUnivaluePath(node))
