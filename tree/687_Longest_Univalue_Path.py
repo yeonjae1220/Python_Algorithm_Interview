@@ -30,7 +30,7 @@ class Solution:
 
             self.result = max(self.result, left + right)
 
-            #return left + right 이어져 있는 모든 간선 거미줄 처럼 세는게 아니네
+            #return left + right 이어져 있는 모든 간선 거미줄 처럼 세는게 아니네 "경로"에 대한 정의에 대해 정확하게 정해야 할듯
             return max(left, right) #이렇게 쓰는것도 기억 해둬야 할듯. 구조상?
         dfs(root)
         return self.result
