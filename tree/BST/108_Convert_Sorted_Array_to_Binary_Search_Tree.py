@@ -1,8 +1,13 @@
 #pdf 봄
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 from typing import Optional
 from typing import List
 import collections
 import Tree_Visualizer
+# from tree.Tree_Visualizer import preorder, deserialize
+# from .. import Tree_Visualizer
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

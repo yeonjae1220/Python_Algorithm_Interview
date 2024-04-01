@@ -1,5 +1,7 @@
 # https://support.leetcode.com/hc/en-us/articles/360011883654-What-does-1-null-2-3-mean-in-binary-tree-representation
 # https://leetcode.com/problems/recover-binary-search-tree/solutions/32539/Tree-Deserializer-and-Visualizer-for-Python/
+import collections
+
 class TreeNode:
     def __init__(self, val, left=None, right=None):
         self.val = val
@@ -20,6 +22,28 @@ def deserialize(string): # deserializatoin (역직렬화) : 직렬화된 파일 
             if kids: node.left  = kids.pop()
             if kids: node.right = kids.pop()
     return root
+
+def serialize(root) -> str:
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        result = ['null'] #deserialize할 때 인덱스 편의를 위해 이렇게 index 0일 때 처리를 하는 듯
+        queue = collections.deque()
+        queue.append(root)
+
+        while queue:            
+            node = queue.popleft()
+            # print(node.val)
+            if node:
+                queue.append(node.left)
+                queue.append(node.right)
+                result.append(str(node.val))
+            else:
+                result.append('null')
+                    
+        return ' '.join(result)
 
 # def drawtree(root):
 #     def height(root):
