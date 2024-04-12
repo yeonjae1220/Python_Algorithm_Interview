@@ -10,7 +10,7 @@ class ListNode:
 #pdf 봄
 class Solution:
     def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        cur = parent = ListNode(None)
+        cur = parent = ListNode(0)
         while head:
             while cur.next and cur.next.val < head.val:
                 cur = cur.next
