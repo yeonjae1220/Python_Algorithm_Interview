@@ -32,6 +32,9 @@ class Solution_pdf:
             result.append((x, y))
         return result
         
+"""
+이는 파이썬의 heapq 모듈이 요소들을 튜플 형태로 관리하기 때문입니다. heapq 모듈은 리스트를 힙으로 취급하고, 이 힙은 순서를 기준으로 최소 힙(min heap)으로 동작합니다. 따라서 heapq 모듈을 사용하여 요소를 추가하거나 제거할 때 튜플을 사용하여 요소의 우선순위를 지정해야 합니다.
+"""
 
 
 points = [[1,3],[-2,2]]
