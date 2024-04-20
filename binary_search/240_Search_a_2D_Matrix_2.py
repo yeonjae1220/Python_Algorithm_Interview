@@ -50,8 +50,8 @@ class Solution1:
                 col -= 1
             # 타깃이 크면 아래로 이동
             elif target > matrix[row][col]:
-                row >= 1
-            return False
+                row += 1
+        return False
         
 # Pythonic way
 class Solution2:
