@@ -16,7 +16,7 @@ class Solution {
                 }
                 else {
                     i++;
-                    j++;
+                    j--;
                     continue;
                 }
             }

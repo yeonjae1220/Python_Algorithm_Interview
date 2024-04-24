@@ -45,3 +45,9 @@ class Solution2:
 s = "A man, a plan, a canal: Panama"
 print(Solution().isPalindrome(s))
 
+# 정규 표현식 이용
+# https://jh2021.tistory.com/7
+
+# sol 2 마지막 근처 부분 true false 값을 연산으로 이용
+
+# pdf, string받아서, collection.deque() 이용
