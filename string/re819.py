@@ -34,10 +34,10 @@ class Solution:
 # leetcode sol
 # 뭐 비슷함, 아래랑 다른 답안에서는 symbol = "!?',;." 해놓고 symbol 들 for 문 돌리면서 paragraph.replace(교체할 symbol, " ") 해서 바꿔주기도 함
 
-
+"""
 import re
 
-class Solution:
+class Solution_leetcode:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
 		
 		# convert to lower case and split string into words by spaces and punctuation
@@ -48,10 +48,29 @@ class Solution:
 		
 		# return value that counted max times in the new list
         return max(b, key = b.count)
+
+
 """
+pdf sol 대로 도전
+"""
+import re
+import collections
+
+class Solution_pdf:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        word = re.sub('[^\w]', ' ', paragraph.lower()).split()
+        word = collections.Counter(word)
+        word = sorted(word.items(), key= lambda x: x[1], reverse=True)
+        for w in word:
+            if w[0] not in banned:
+                return w[0]
+        
+        
+        
+
 
 
 paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
 banned = ["hit"]
 
-print(Solution().mostCommonWord(paragraph, banned))
+print(Solution_pdf().mostCommonWord(paragraph, banned))
