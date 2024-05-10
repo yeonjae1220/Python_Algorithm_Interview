@@ -19,3 +19,10 @@ def toLinkedList(list: List) ->ListNode:
     
     
     return head
+
+def toList(node: ListNode) -> List:
+    result = []
+    while node:
+        result.append(node.val)
+        node = node.next
+    return result
