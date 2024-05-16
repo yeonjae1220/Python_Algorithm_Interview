@@ -31,7 +31,9 @@
 
 
 
-
+"""
+228, 229p 참고
+"""
 #문자열을 이용한 풀이
 #Definition for singly-linked list.
 from typing import List, Optional
