@@ -38,6 +38,35 @@ class Solution:
             l1 = ListNode(carry)
         
         return result
+    
+
+"""
+다시
+"""
+class Solution_re:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        head = ListNode()
+        result = head
+        carry = 0
+
+        while l1 or l2 or carry:
+            sum_val = carry
+            if l1:
+                sum_val += l1.val
+                l1 = l1.next
+            if l2:
+                sum_val += l2.val
+                l2 = l2.next
+            
+            carry, val = divmod(sum_val, 10)
+            result.next = ListNode(val)
+            result = result.next
+
+        return head.next
+                
+
+            
+
 
 """
 그래 이걸 하고 싶었는데 왜 이게 안되냐
@@ -72,4 +101,4 @@ l1 = [9,9,9,9,9,9,9]
 l2 = [9,9,9,9]
 l1 = type_converter.toLinkedList(l1)
 l2 = type_converter.toLinkedList(l2)
-print(type_converter.toList(Solution2().addTwoNumbers(l1, l2)))
+print(type_converter.toList(Solution_re().addTwoNumbers(l1, l2)))
