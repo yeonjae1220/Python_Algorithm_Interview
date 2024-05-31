@@ -25,7 +25,10 @@ class ListNode:
 #         return root.next
 
 
-#재귀        
+#재귀
+"""
+한번 더 보니 진짜 맛돌이 풀이다.
+"""
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head and head.next:
